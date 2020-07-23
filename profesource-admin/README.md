@@ -1,6 +1,5 @@
 
-![Product Presentation Image](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)
-
+[![Microsoft-Teams-image.png](https://i.postimg.cc/hPWH3dMK/Microsoft-Teams-image.png)](https://postimg.cc/Cd7PRdW2)
 ## Description
 
 ### React Dashboard Page
