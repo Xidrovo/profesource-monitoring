@@ -125,47 +125,6 @@ export default function Sidebar() {
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
-            <h6 className="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Documentation
-            </h6>
-            {/* Navigation */}
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-              <li className="inline-flex">
-                <Link
-                  className="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
-                  to="/"
-                >
-                  <i className="fab fa-css3-alt mr-2 text-gray-500 text-base"></i> CSS Components
-                </Link>
-              </li>
-
-              <li className="inline-flex">
-                <Link
-                  className="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
-                  to="/"
-                >
-                  <i className="fab fa-react mr-2 text-gray-500 text-base"></i> React
-                </Link>
-              </li>
-
-              <li className="inline-flex">
-                <Link
-                  className="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
-                  to="/"
-                >
-                  <i className="fab fa-angular mr-2 text-gray-500 text-base"></i> Angular
-                </Link>
-              </li>
-
-              <li className="inline-flex">
-                <Link
-                  className="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
-                  to="/"
-                >
-                  <i className="fab fa-js-square mr-2 text-gray-500 text-base"></i> Javascript
-                </Link>
-              </li>
-            </ul>
           </div>
         </div>
       </nav>
