@@ -78,9 +78,18 @@ export default function Sidebar() {
               <li className="items-center">
                 <Link
                   className="text-blue-500 hover:text-gray-700 text-xs uppercase py-3 font-bold block"
-                  to="/dashboard"
+                  to="/"
                 >
                   <i className="fas fa-tv opacity-75 mr-2 text-sm"></i> Dashboard
+                </Link>
+              </li>
+
+              <li className="items-center">
+                <Link
+                  className="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
+                  to="/Diagrams"
+                >
+                  <i className="fas fa-user-circle text-gray-500 mr-2 text-sm"></i> Statistics
                 </Link>
               </li>
 
