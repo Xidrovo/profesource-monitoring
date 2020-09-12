@@ -13,14 +13,14 @@ export default function BarChart() {
   
   function llenarDatos(){
     TotalPostMaterias.map((materias, i)=>{
-      Nmaterias.push(materias.Subject_name);
+      Nmaterias.push(materias.materia);
       TotalM.push(materias.TotalPosts);
     })
   }
 
   React.useEffect(() => {
     axios
-    .get('')
+    .get('http://localhost:3000/api/admin/bar')
     .then((response)=>{
       setTotalPostMaterias(response.data)
     })

@@ -9,18 +9,18 @@ export default function LineChart3() {
 
   let Subject= []
   
-  let MaxiPost=[]
+  let MaxiUser=[]
 
   function llenarDatos(){
-    TotalUsuariosNuevos.map(info=>{
-      Subject.push(info.Usuarios);
-      MaxiPost.push(info.Materia);
+    TotalUsuariosMateria.map(info=>{
+      Subject.push(info.Materia);
+      MaxiUser.push(info.Usuarios);
     })
   }
 
   React.useEffect(() => {
     axios
-    .get('')
+    .get('http://localhost:3000/api/admin/linechart2')
     .then((response)=>{
       setTotalUsuariosMateria(response.data)
     })
@@ -37,7 +37,7 @@ export default function LineChart3() {
             label: new Date().getFullYear(),
             backgroundColor: "#3182CE",
             borderColor: "#3182CE",
-            data: MaxiPost,
+            data: MaxiUser,
             fill: false
           }
         ]

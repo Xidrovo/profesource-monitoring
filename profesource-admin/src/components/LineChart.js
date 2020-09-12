@@ -14,13 +14,13 @@ export default function LineChart() {
   function llenarDatos(){
     TotalUsuariosNuevos.map(mes=>{
       month.push(mes.Mes);
-      TotalU.push(mes.New_Users);
+      TotalU.push(mes.NewUsers);
     })
   }
 
   React.useEffect(() => {
     axios
-    .get('')
+    .get('http://localhost:3000/api/admin/linechart')
     .then((response)=>{
       setTotalUsuariosNuevos(response.data)
     })
