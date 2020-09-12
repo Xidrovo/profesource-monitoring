@@ -2,8 +2,6 @@ import React from "react";
 
 import Navbar from "components/Navbar.js";
 import Sidebar from "components/Sidebar.js";
-import LineChart from "components/LineChart.js";
-import BarChart from "components/BarChart.js";
 
 export default function Dashboard() {
   return (
