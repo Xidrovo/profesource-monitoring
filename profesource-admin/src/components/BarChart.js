@@ -1,40 +1,44 @@
 import React from "react";
 import Chart from "chart.js";
+import axios from 'axios'
 
 export default function BarChart() {
+  //var TotalPostMaterias=[{Subject_name:'mater0a', TotalPosts:'50'}]
+
+  const [TotalPostMaterias, setTotalPostMaterias] = React.useState([])
+
+  let Nmaterias= []
+  
+  let TotalM= []
+  
+  function llenarDatos(){
+    TotalPostMaterias.map((materias, i)=>{
+      Nmaterias.push(materias.Subject_name);
+      TotalM.push(materias.TotalPosts);
+    })
+  }
+
   React.useEffect(() => {
+    axios
+    .get('')
+    .then((response)=>{
+      setTotalPostMaterias(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+    llenarDatos();
     let config = {
       type: "bar",
       data: {
-        labels: [
-          "Enero",
-          "Febrero",
-          "Marzo",
-          "Abril",
-          "Mayo",
-          "Junio",
-          "Julio",
-          "Agosto",
-          "Septiembre",
-          "Octubre",
-          "Noviembre",
-          "Diciembre"
-        ],
+        labels: Nmaterias,
         datasets: [
           {
             label: new Date().getFullYear(),
             backgroundColor: "#3182CE",
             borderColor: "#3182CE",
-            data: [62, 28, 10, 15, 18, 22, 25],
+            data: TotalM,
             fill: false,
-            barThickness: 8
-          },
-          {
-            label: new Date().getFullYear() - 1,
-            fill: false,
-            backgroundColor: "#4A5568",
-            borderColor: "#4A5568",
-            data: [51, 23, 14, 17, 14, 20, 26, 25, 39, 20, 18, 5],
             barThickness: 8
           }
         ]
@@ -100,6 +104,8 @@ export default function BarChart() {
         }
       }
     };
+
+
     let ctx = document.getElementById("bar-chart").getContext("2d");
     window.myBar = new Chart(ctx, config);
   }, []);
@@ -114,7 +120,7 @@ export default function BarChart() {
                   Actividad
                 </h6>
                 <h2 className="text-gray-800 text-xl font-semibold">
-                  Nuevos usuarios
+                  Total de post por materia
                 </h2>
               </div>
             </div>

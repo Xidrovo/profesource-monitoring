@@ -4,6 +4,7 @@ import Navbar from "components/Navbar.js";
 import Sidebar from "components/Sidebar.js";
 import LineChart from "components/LineChart.js";
 import BarChart from "components/BarChart.js";
+import LineChart3 from "components/LineChart3.js";
 
 export default function Diagrams() {
   return (
@@ -113,6 +114,7 @@ export default function Diagrams() {
           <div className="flex flex-wrap">
             <LineChart />
             <BarChart />
+            <LineChart3/>
           </div>
           <footer className="block py-4">
             <div className="container mx-auto px-4">

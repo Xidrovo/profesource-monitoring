@@ -2,19 +2,19 @@ import React from "react";
 import Chart from "chart.js";
 import axios from "axios";
 
-export default function LineChart() {
-  //var TotalUsuariosNuevos=[{Mes:'Enero', New_Users:'50'}]
+export default function LineChart3() {
+  //var TotalUsuariosNuevos=[{Subject_name:'Dawm', usename:'fponce', Total:'20'}]
 
-  const [TotalUsuariosNuevos, setTotalUsuariosNuevos] = React.useState([])
+  const [TotalUsuariosMateria, setTotalUsuariosMateria] = React.useState([])
 
-  let month= []
+  let Subject= []
   
-  let TotalU= []
+  let MaxiPost=[]
 
   function llenarDatos(){
-    TotalUsuariosNuevos.map(mes=>{
-      month.push(mes.Mes);
-      TotalU.push(mes.New_Users);
+    TotalUsuariosNuevos.map(info=>{
+      Subject.push(info.Usuarios);
+      MaxiPost.push(info.Materia);
     })
   }
 
@@ -22,7 +22,7 @@ export default function LineChart() {
     axios
     .get('')
     .then((response)=>{
-      setTotalUsuariosNuevos(response.data)
+      setTotalUsuariosMateria(response.data)
     })
     .catch((error)=>{
       console.log(error)
@@ -31,13 +31,13 @@ export default function LineChart() {
     var config = {
       type: "line",
       data: {
-        labels: month,
+        labels: Subject,
         datasets: [
           {
             label: new Date().getFullYear(),
             backgroundColor: "#3182CE",
             borderColor: "#3182CE",
-            data: TotalU,
+            data: MaxiPost,
             fill: false
           }
         ]
@@ -113,7 +113,7 @@ export default function LineChart() {
         }
       }
     };
-    var ctx = document.getElementById("line-chart").getContext("2d");
+    var ctx = document.getElementById("line-chart3").getContext("2d");
     window.myLine = new Chart(ctx, config);
   }, []);
   return (
@@ -127,7 +127,7 @@ export default function LineChart() {
                   Actividad
                 </h6>
                 <h2 className="text-white text-xl font-semibold">
-                  Nuevos usuarios por mes
+                  Total de usuarios por materia
                 </h2>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function LineChart() {
           <div className="p-4 flex-auto">
             {/* Chart */}
             <div className="relative" style={{ height: "350px" }}>
-              <canvas id="line-chart"></canvas>
+              <canvas id="line-chart3"></canvas>
             </div>
           </div>
         </div>
