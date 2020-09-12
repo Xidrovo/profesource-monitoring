@@ -5,16 +5,17 @@ import axios from "axios";
 export default function LineChart() {
   //var TotalUsuariosNuevos=[{Mes:'Enero', New_Users:'50'}]
 
-  const [TotalUsuariosNuevos, setTotalUsuariosNuevos] = React.useState([])
-
-  let month= []
+  const TotalUsuariosNuevos = []
+  let month=[]
   
-  let TotalU= []
+  let TotalU=[]
 
   function llenarDatos(){
-    TotalUsuariosNuevos.map(mes=>{
-      month.push(mes.Mes);
-      TotalU.push(mes.NewUsers);
+    TotalUsuariosNuevos.map(obj=>{
+      obj.map(data =>{
+        month.push(data.Mes);
+        TotalU.push(data.NewUsers);
+      })
     })
   }
 
@@ -22,12 +23,12 @@ export default function LineChart() {
     axios
     .get('http://localhost:3000/api/admin/linechart')
     .then((response)=>{
-      setTotalUsuariosNuevos(response.data)
+      TotalUsuariosNuevos.push(response.data)
+      llenarDatos();
     })
     .catch((error)=>{
       console.log(error)
     })
-    llenarDatos();
     var config = {
       type: "line",
       data: {
