@@ -96,7 +96,7 @@ export default function Sidebar() {
               <li className="items-center">
                 <Link
                   className="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
-                  to="/"
+                  to="/users"
                 >
                   <i className="fas fa-user-circle text-gray-500 mr-2 text-sm"></i> Profile Page
                 </Link>
@@ -105,9 +105,9 @@ export default function Sidebar() {
               <li className="items-center">
                 <Link
                   className="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
-                  to="/"
+                  to="/subjects"
                 >
-                  <i className="fas fa-fingerprint text-gray-500 mr-2 text-sm"></i> Login
+                  <i className="fas fa-fingerprint text-gray-500 mr-2 text-sm"></i> Subjects
                 </Link>
               </li>
 
